@@ -18,7 +18,11 @@ async function manipularSubmissaoFormulario(event) { // cria função conectada 
     const autoria = document.getElementById("pensamento-autoria").value //cria constante para guardar o novo evento (pensamento registrado) para o ID do CSS autoria
 
     try {
-        await api.salvarPensamentos({ conteudo, autoria }) // salva o pensamento criando conexão com o a requisição configurada na API
+        if(id) {
+            await api.editarPensamentos({ id, conteudo, autoria })
+        } else {           
+            await api.salvarPensamentos({ conteudo, autoria }) // salva o pensamento criando conexão com o a requisição configurada na API
+        }
         ui.rederizarPensamentos() // renderiza o pensamento via função criada no UI.
     } 
     catch {
