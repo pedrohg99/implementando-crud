@@ -1,5 +1,6 @@
 import api from "./api.js"
 
+
 const ui = {
     async rederizarPensamentos(){
         const listaPensamentos = document.getElementById('lista-pensamentos') // puxa via ID do HTML a sessão para renderizar os pensamentos
@@ -36,7 +37,12 @@ const ui = {
         li.appendChild(pensamentoConteudo)
         li.appendChild(pensamentoAutoria)
         listaPensamentos.appendChild(li)
+    },
+
+    limparFormulario() { //Função para limpar formulário
+        document.getElementById("pensamento-form").reset(); //pega o elemento pensamento-form pelo ID (elemento condizente com o formulário no HTML) e aplica um reset nos campos, para limpar o conteúdo.
     }
 }
+
 
 export default ui;

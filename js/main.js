@@ -5,7 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ui.rederizarPensamentos()
 
     const formularioPensamento = document.getElementById("pensamento-form")
+    const botaoCancelar = document.getElementById("botao-cancelar") // puxa o elemento do botão pelo ID botao-cancelar, que está no HTML
+
     formularioPensamento.addEventListener("submit", manipularSubmissaoFormulario) // cria funcionalidade ao submeter o formulário.
+    botaoCancelar.addEventListener("click", manipularCancelamento) // aplica função criada no UI com o click, chamando a função manipularCancelamento que está ligada com a função limparFormulario do UI.
 })
 
 async function manipularSubmissaoFormulario(event) { // cria função conectada com a ui.
@@ -21,4 +24,8 @@ async function manipularSubmissaoFormulario(event) { // cria função conectada 
     catch {
         alert("Erro ao salvar pensamento")
     }
+}
+
+function manipularCancelamento() { //cria função com a funcionalidade criada no UI
+  ui.limparFormulario() //função criada no UI
 }
