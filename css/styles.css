@@ -36,7 +36,7 @@ main {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('/assets/imagens/background.png'); 
+  background-image: url('../assets/imagens/background.png'); 
   background-size: cover;
   opacity: 0.5;
   z-index: -1;
@@ -202,12 +202,10 @@ h2, h3 {
 }
 
 #lista-pensamentos {
-  list-style: none;
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  row-gap: 32px;
+  justify-content: center;
+  gap: 24px;
 }
 
 .li-pensamento {
@@ -281,4 +279,24 @@ span {
   height: 1px;
   background: #041832;
   margin: 96px 0 48px 0;
+}
+
+.mensagem-vazia {
+  display: none;
+  text-align: center;
+  color: var(--Azul-Dark, #041832);
+  margin-top: 40px;
+}
+
+.mensagem-vazia img {
+  max-width: 200px;
+  margin-bottom: 20px;
+}
+
+.mensagem-vazia p {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 33px;
+  text-align: center;
 }
